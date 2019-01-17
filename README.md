@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+clone this repo,
+then "rails db:migrate"
+then "rails c"
+then \/\/\/\/\/
 
-Things you may want to cover:
+Screw around with this stuff:
 
-* Ruby version
+        > u2 = User.find(2)
+        > c1 = u2.comments.first should return that user’s comment. #comments returns an array with comments, which is why we need to use #first to actually retrieve the comment itself.
+        > c1.user should return that comment’s author User (u2).
+        > p1 = Post.first
+        > p1.comments.first should return the comment c1.
+        > c1.post should return the post p1.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If any of those don’t work, double check your associations. Sometimes the error messages can be helpful in prompting you for how to set up those associations.
